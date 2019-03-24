@@ -46,12 +46,12 @@ class XkcdWidget extends Widget {
     );
   }
 
-  showImage(): void {
-    ServerConnection.makeRequest({url: 'https://egszlpbmle.execute-api.us-east-1.amazonaws.com/prod'}, this.settings).then(response => {
-      this.img.src = response.data.img;
-      this.img.alt = response.data.title;
-      this.img.title = response.data.alt;
-    });
+  async showImage() {
+    const response = await ServerConnection.makeRequest('https://egszlpbmle.execute-api.us-east-1.amazonaws.com/prod', {}, this.settings);
+    const data = await response.json();
+    this.img.src = data.img;
+    this.img.alt = data.title;
+    this.img.title = data.alt;
   }
 };
 

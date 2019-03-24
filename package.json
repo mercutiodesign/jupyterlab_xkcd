@@ -27,10 +27,10 @@
     "extension": true
   },
   "dependencies": {
-    "@jupyterlab/application": "^0.10.0"
+    "@jupyterlab/application": "^0.19.1"
   },
   "devDependencies": {
-    "rimraf": "^2.6.1",
-    "typescript": "~2.4.0"
+    "rimraf": "^2.6.3",
+    "typescript": "^3.3.4000"
   }
 }
